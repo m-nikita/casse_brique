@@ -72,9 +72,9 @@ class ViewController: UIViewController {
             balle.center.y = view.frame.size.height / 2
         }
         
-        if balle.center.y > (raquette.center.y - (raquette.frame.size.height/2)) && balle.center.y <= (raquette.center.y + (raquette.frame.size.height/2)) {
+        if balle.center.y >= (raquette.center.y - (raquette.frame.size.height)) && balle.center.y <= (raquette.center.y + (raquette.frame.size.height)) {
             print("La balle se trouve à la même hauteur que la raquette")
-            if balle.center.x > (raquette.center.x - (raquette.frame.size.width/2)) && balle.center.x <= (raquette.center.x + (raquette.frame.size.width/2)) {
+            if balle.center.x >= (raquette.center.x - (raquette.frame.size.width/2)) && balle.center.x <= (raquette.center.x + (raquette.frame.size.width/2)) {
                 print("La balle se trouve dans la largeur de la raquette")
                 v.y = -v.y
                 v.x = -v.x
