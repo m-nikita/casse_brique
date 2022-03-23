@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var raquette: UIImageView!
     
     @IBOutlet weak var balle: UIImageView!
+
     
     var t:Timer!
     var v = CGPoint(x: 10.0,y: 10.0) // initialise la vitesse de la balle
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
         // on demande les repères de la touche par rapport à la view
         let c = d.location(in: view)
         
+        raquette.center.y = 857.0
         raquette.center.x = c.x
         
         print("L'écran a été touché en x=\(c.x) et y=\(c.y)")
@@ -55,12 +57,28 @@ class ViewController: UIViewController {
         balle.center.x += v.x
         balle.center.y += v.y
         
-        if balle.center.x > view.frame.size.width || balle.center.x < 0 {
+        if balle.center.x > (view.frame.size.width - (balle.frame.size.width/2)) || balle.center.x < (0 + (balle.frame.size.width/2)) {
             v.x = -v.x
         }
         
-        if balle.center.y > view.frame.size.height || balle.center.y < 0 {
+        if balle.center.y < (balle.frame.height/2) {
+            print("La balle a touché le haut de l'écran")
             v.y = -v.y
+        }
+        
+        if balle.center.y > view.frame.size.height {
+            print("PERDU ! La balle a touché le bas de l'écran")
+            balle.center.x = view.frame.size.width / 2
+            balle.center.y = view.frame.size.height / 2
+        }
+        
+        if balle.center.y > (raquette.center.y - (raquette.frame.size.height/2)) && balle.center.y <= (raquette.center.y + (raquette.frame.size.height/2)) {
+            print("La balle se trouve à la même hauteur que la raquette")
+            if balle.center.x > (raquette.center.x - (raquette.frame.size.width/2)) && balle.center.x <= (raquette.center.x + (raquette.frame.size.width/2)) {
+                print("La balle se trouve dans la largeur de la raquette")
+                v.y = -v.y
+                v.x = -v.x
+            }
         }
         
         
