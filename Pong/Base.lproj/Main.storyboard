@@ -24,11 +24,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="5Xv-om-flj">
-                                <rect key="frame" x="177" y="63" width="60" height="30"/>
+                                <rect key="frame" x="20" y="44" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="o5p-MG-4rk">
+                                <rect key="frame" x="101" y="44" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="Ipg-7f-isw">
+                                <rect key="frame" x="177" y="44" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="X25-Aw-kYs">
+                                <rect key="frame" x="334" y="44" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="1F5-fT-PNY">
-                                <rect key="frame" x="187" y="78" width="0.0" height="0.0"/>
+                                <rect key="frame" x="0.0" y="78" width="414" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="Blc-nH-pyS">
+                                <rect key="frame" x="256" y="44" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -37,8 +53,12 @@
                     </view>
                     <connections>
                         <outlet property="balle" destination="jLb-8R-2lO" id="dxm-cj-1ls"/>
-                        <outlet property="brique" destination="5Xv-om-flj" id="5Nf-R4-PPc"/>
                         <outlet property="raquette" destination="PZe-Of-V0A" id="fMg-7a-4al"/>
+                        <outletCollection property="briques" destination="X25-Aw-kYs" collectionClass="NSMutableArray" id="oEo-ED-QVp"/>
+                        <outletCollection property="briques" destination="Blc-nH-pyS" collectionClass="NSMutableArray" id="ZRg-v1-nCM"/>
+                        <outletCollection property="briques" destination="Ipg-7f-isw" collectionClass="NSMutableArray" id="euF-s6-WLO"/>
+                        <outletCollection property="briques" destination="o5p-MG-4rk" collectionClass="NSMutableArray" id="ckI-TN-mAe"/>
+                        <outletCollection property="briques" destination="5Xv-om-flj" collectionClass="NSMutableArray" id="MfY-bA-ge1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var balle: UIImageView!
 
-    @IBOutlet weak var brique: UIImageView!
+    @IBOutlet var briques: [UIImageView]!
     
     class Brique {
         
@@ -103,15 +103,16 @@ class ViewController: UIViewController {
         }
         
         
-        if balle.center.x >= (brique.center.x - (brique.frame.size.width/2) - balle.frame.width/2) && balle.center.x <= (brique.center.x + (brique.frame.size.width/2) + balle.frame.width/2) {
-            
-            if balle.center.y >= (brique.center.y - (brique.frame.size.height/2) - balle.frame.height/2) && balle.center.y <= (brique.center.y + (brique.frame.size.height/2) + balle.frame.height/2){
+        for brique in briques {
+            if balle.center.x >= (brique.center.x - (brique.frame.size.width/2) - balle.frame.width/2) && balle.center.x <= (brique.center.x + (brique.frame.size.width/2) + balle.frame.width/2) {
                 
-                print("La brique est touché par la balle")
-                v.x = -v.x
-                v.y = -v.y
-                brique.isHidden = true
-                brique.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(brique)
+                if balle.center.y >= (brique.center.y - (brique.frame.size.height/2) - balle.frame.height/2) && balle.center.y <= (brique.center.y + (brique.frame.size.height/2) + balle.frame.height/2){
+                    
+                    print("La brique est touché par la balle")
+                    v.y = -v.y
+                    brique.isHidden = true
+                    brique.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(brique)
+                }
             }
         }
         
