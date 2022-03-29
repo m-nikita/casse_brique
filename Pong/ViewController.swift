@@ -16,6 +16,12 @@ class ViewController: UIViewController {
 
     @IBOutlet var briques: [UIImageView]!
     
+    @IBOutlet weak var bouton_rejouer: UIButton!
+    
+    @IBAction func rejouer(_ sender: Any) {
+        self.view.layoutIfNeeded()
+    }
+    
     class Brique {
         
         var x: Int
@@ -118,6 +124,7 @@ class ViewController: UIViewController {
                     print("\(compteur_briques_touchees)")
                     if compteur_briques_touchees == longeur_tableau_briques {
                         print("Toutes les briques ont été touché")
+                        fin_du_niveau()
                     }
                 }
             }
@@ -141,6 +148,32 @@ class ViewController: UIViewController {
         t = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(boucle), userInfo: nil, repeats: true)
         
     }
+    
 
-
+    func stopTimer() {
+        print("Fin du timer permettant le fonctionnement de la boucle")
+        t.invalidate()
+    }
+    
+    func retirer_balle() {
+        balle.isHidden = true
+        balle.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(balle)
+        print("Balle retirée de l'écran et masquée")
+    }
+    
+    func retirer_raquette() {
+        raquette.isHidden = true
+        raquette.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(balle)
+        print("Raquette retirée de l'écran et masquée")
+    }
+    
+    func fin_du_niveau() {
+        stopTimer()
+        retirer_balle()
+        retirer_raquette()
+        bouton_rejouer.isHidden = false
+        print("Fin du niveau")
+    }
+    
+    
 }
