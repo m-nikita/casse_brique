@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         raquette.center.y = 857.0
         raquette.center.x = c.x
         
-        print("L'écran a été touché en x=\(c.x) et y=\(c.y)")
+        //print("L'écran a été touché en x=\(c.x) et y=\(c.y)")
         
     }
     
@@ -61,12 +61,12 @@ class ViewController: UIViewController {
         
         raquette.center.x = c.x
         
-        print("Le doigt a glissé en x=\(c.x) et y=\(c.y)")
+        //print("Le doigt a glissé en x=\(c.x) et y=\(c.y)")
         
     }
     
     
-    
+    var compteur_briques_touchees = 0
     
     // boucle qui se répète
     @objc func boucle (t:Timer) {
@@ -103,7 +103,9 @@ class ViewController: UIViewController {
         }
         
         
+        
         for brique in briques {
+            let longeur_tableau_briques = briques.count
             if balle.center.x >= (brique.center.x - (brique.frame.size.width/2) - balle.frame.width/2) && balle.center.x <= (brique.center.x + (brique.frame.size.width/2) + balle.frame.width/2) {
                 
                 if balle.center.y >= (brique.center.y - (brique.frame.size.height/2) - balle.frame.height/2) && balle.center.y <= (brique.center.y + (brique.frame.size.height/2) + balle.frame.height/2){
@@ -112,10 +114,14 @@ class ViewController: UIViewController {
                     v.y = -v.y
                     brique.isHidden = true
                     brique.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(brique)
+                    compteur_briques_touchees += 1
+                    print("\(compteur_briques_touchees)")
+                    if compteur_briques_touchees == longeur_tableau_briques {
+                        print("Toutes les briques ont été touché")
+                    }
                 }
             }
         }
-        
     }
     
     override func viewDidLoad() {
