@@ -14,6 +14,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var balle: UIImageView!
 
+    @IBOutlet weak var brique: UIImageView!
+    
+    class Brique {
+        
+        var x: Int
+        var y: Int
+        var width: Int
+        var height: Int
+        
+        init(x: Int, y: Int, width: Int, height: Int) {
+            self.x = x
+            self.y = y
+            self.width = width
+            self.height = height
+        }
+    }
     
     var t:Timer!
     var v = CGPoint(x: 10.0,y: 10.0) // initialise la vitesse de la balle
@@ -76,11 +92,28 @@ class ViewController: UIViewController {
             print("La balle se trouve à la même hauteur que la raquette")
             if balle.center.x >= (raquette.center.x - (raquette.frame.size.width/2)) && balle.center.x <= (raquette.center.x + (raquette.frame.size.width/2)) {
                 print("La balle se trouve dans la largeur de la raquette")
+                if balle.center.x >= (raquette.center.x - (raquette.frame.size.width/2)) && balle.center.x <= (raquette.center.x - (balle.frame.size.width/2)) {
+                    print("La balle se trouve sur la gauche de la raquette")
+                }
+                if balle.center.x >= (raquette.center.x + (balle.frame.size.width/2)) && balle.center.x <= (raquette.center.x + (raquette.frame.size.width/2)) {
+                    print("La balle se trouve sur la droite de la raquette")
+                }
                 v.y = -v.y
-                v.x = -v.x
             }
         }
         
+        
+        if balle.center.x >= (brique.center.x - (brique.frame.size.width/2) - balle.frame.width/2) && balle.center.x <= (brique.center.x + (brique.frame.size.width/2) + balle.frame.width/2) {
+            
+            if balle.center.y >= (brique.center.y - (brique.frame.size.height/2) - balle.frame.height/2) && balle.center.y <= (brique.center.y + (brique.frame.size.height/2) + balle.frame.height/2){
+                
+                print("La brique est touché par la balle")
+                v.x = -v.x
+                v.y = -v.y
+                brique.isHidden = true
+                brique.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(brique)
+            }
+        }
         
     }
     
@@ -104,4 +137,3 @@ class ViewController: UIViewController {
 
 
 }
-
