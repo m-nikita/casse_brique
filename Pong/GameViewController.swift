@@ -25,6 +25,10 @@ class GameViewController: UIViewController {
     
     var bouton_pause_clique = false
     
+    @IBOutlet weak var indicateur_nombre_briques_detruites: UILabel!
+    
+    @IBOutlet weak var indicateur_nombre_vies_restantes: UILabel!
+    
     @IBAction func mettre_jeu_en_pause(_ sender: UIButton) {
         
         if bouton_pause_clique == false {
@@ -71,14 +75,14 @@ class GameViewController: UIViewController {
         let c = d.location(in: view)
         
         if bouton_pause_clique == false {
-            raquette.center.y = 857.0
-            raquette.center.x = c.x
             
-            //print("L'écran a été touché en x=\(c.x) et y=\(c.y)")
+            if c.x >= raquette.frame.size.width/2 && c.x <= view.frame.size.width - (raquette.frame.size.width/2) {
+                raquette.center.y = 857.0
+                raquette.center.x = c.x
+                //print("L'écran a été touché en x=\(c.x) et y=\(c.y)")
+                //print("Le doigt a glissé en x=\(c.x) et y=\(c.y)")
+            }
         }
-        
-        
-        
     }
     
     
@@ -91,22 +95,31 @@ class GameViewController: UIViewController {
         let c = d.location(in: view)
         
         if bouton_pause_clique == false {
-            raquette.center.x = c.x
             
-            //print("Le doigt a glissé en x=\(c.x) et y=\(c.y)")
+            if c.x >= raquette.frame.size.width/2 && c.x <= view.frame.size.width - (raquette.frame.size.width/2) {
+                raquette.center.x = c.x
+                //print("Le doigt a glissé en x=\(c.x) et y=\(c.y)")
+            }
         }
-        
-        
     }
-    
-
-  
     
     
     var compteur_briques_touchees = 0
+    var nombre_vies = 3
     
     // boucle qui se répète
     @objc func boucle (t:Timer) {
+        
+        if nombre_vies == 0 {
+            retirer_toutes_les_briques()
+            fin_du_niveau()
+            print("Vous n'avez plus de vie")
+        }
+        
+        indicateur_nombre_briques_detruites.text = "\(compteur_briques_touchees)/\(briques.count)"
+        
+        indicateur_nombre_vies_restantes.text = "x\(nombre_vies)"
+        
         balle.center.x += v.x
         balle.center.y += v.y
         
@@ -121,6 +134,7 @@ class GameViewController: UIViewController {
         
         if balle.center.y > view.frame.size.height {
             print("PERDU ! La balle a touché le bas de l'écran")
+            nombre_vies -= 1
             // remettre la balle au centre de la raquette du joueur
             v.y = -v.y
             balle.center.x = raquette.center.x
@@ -154,10 +168,12 @@ class GameViewController: UIViewController {
                     brique.isHidden = true
                     brique.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(brique)
                     compteur_briques_touchees += 1
+                    indicateur_nombre_briques_detruites.text = "\(compteur_briques_touchees)/\(briques.count)"
                     print("\(compteur_briques_touchees)")
                     if compteur_briques_touchees == longeur_tableau_briques {
                         print("Toutes les briques ont été touché")
                         fin_du_niveau()
+                        print("Fin du niveau")
                     }
                 }
             }
@@ -202,12 +218,18 @@ class GameViewController: UIViewController {
         print("Raquette retirée de l'écran et masquée")
     }
     
+    func retirer_toutes_les_briques() {
+        for brique in briques {
+            brique.isHidden = true
+            brique.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(brique)
+        }
+    }
+    
     func fin_du_niveau() {
         bouton_pause.isHidden = true
         stopTimer()
         retirer_balle()
         retirer_raquette()
         bouton_rejouer.isHidden = false
-        print("Fin du niveau")
     }
 }

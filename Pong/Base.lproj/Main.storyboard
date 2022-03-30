@@ -72,19 +72,10 @@
                                 <rect key="frame" x="0.0" y="78" width="414" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORD-L8-fPf">
-                                <rect key="frame" x="174" y="433" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="REJOUER"/>
-                                <connections>
-                                    <action selector="rejouer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QQi-kU-clJ"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="IBu-h5-u2X"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92p-Mv-6Nt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92p-Mv-6Nt">
                                 <rect key="frame" x="0.0" y="112" width="414" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -93,9 +84,52 @@
                                 <rect key="frame" x="349" y="44" width="45" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="⏸"/>
+                                <state key="normal" title="⏯️"/>
                                 <connections>
                                     <action selector="mettre_jeu_en_pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cns-Uk-ued"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUb-j0-S0R">
+                                <rect key="frame" x="20" y="44" width="45" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="🔙"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="US3-iL-P7i">
+                                <rect key="frame" x="114" y="44" width="45" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="❤️"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6K6-Mc-tTP">
+                                <rect key="frame" x="226" y="44" width="45" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="🧱"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbo-al-jIW">
+                                <rect key="frame" x="160" y="64" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFL-gy-Q2I">
+                                <rect key="frame" x="273" y="64" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORD-L8-fPf">
+                                <rect key="frame" x="153" y="424" width="108" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="REJOUER"/>
+                                <connections>
+                                    <action selector="rejouer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QQi-kU-clJ"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="IBu-h5-u2X"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -106,8 +140,10 @@
                     <connections>
                         <outlet property="balle" destination="jLb-8R-2lO" id="dxm-cj-1ls"/>
                         <outlet property="bordure_superieure" destination="92p-Mv-6Nt" id="zlA-uH-6h3"/>
-                        <outlet property="bouton_pause" destination="l74-Km-Go2" id="IhP-YO-n1f"/>
+                        <outlet property="bouton_pause" destination="l74-Km-Go2" id="hsF-zH-tFH"/>
                         <outlet property="bouton_rejouer" destination="ORD-L8-fPf" id="SFf-dS-s6i"/>
+                        <outlet property="indicateur_nombre_briques_detruites" destination="bFL-gy-Q2I" id="eff-Xm-jWX"/>
+                        <outlet property="indicateur_nombre_vies_restantes" destination="qbo-al-jIW" id="730-Dq-yA6"/>
                         <outlet property="raquette" destination="PZe-Of-V0A" id="fMg-7a-4al"/>
                         <outletCollection property="briques" destination="X25-Aw-kYs" collectionClass="NSMutableArray" id="oEo-ED-QVp"/>
                         <outletCollection property="briques" destination="Blc-nH-pyS" collectionClass="NSMutableArray" id="ZRg-v1-nCM"/>
