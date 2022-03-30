@@ -19,6 +19,25 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var bouton_rejouer: UIButton!
     
+    @IBOutlet weak var bordure_superieure: UILabel!
+    
+    @IBOutlet weak var bouton_pause: UIButton!
+    
+    var bouton_pause_clique = false
+    
+    @IBAction func mettre_jeu_en_pause(_ sender: UIButton) {
+        
+        if bouton_pause_clique == false {
+            t.invalidate()
+            print("Le jeu est en pause")
+            bouton_pause_clique = true
+        } else {
+            t = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(boucle), userInfo: nil, repeats: true)
+            print("Le jeu n'est plus en pause")
+            bouton_pause_clique = false
+        }
+    }
+    
     @IBAction func rejouer(_ sender: Any) {
         self.view.layoutIfNeeded()
     }
@@ -42,6 +61,7 @@ class GameViewController: UIViewController {
     var v = CGPoint(x: 10.0,y: 10.0) // initialise la vitesse de la balle
     
     // touches = ensemble de UITouch (sorte de tableau, ensemble de touches)
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         
@@ -50,10 +70,14 @@ class GameViewController: UIViewController {
         // on demande les repères de la touche par rapport à la view
         let c = d.location(in: view)
         
-        raquette.center.y = 857.0
-        raquette.center.x = c.x
+        if bouton_pause_clique == false {
+            raquette.center.y = 857.0
+            raquette.center.x = c.x
+            
+            //print("L'écran a été touché en x=\(c.x) et y=\(c.y)")
+        }
         
-        //print("L'écran a été touché en x=\(c.x) et y=\(c.y)")
+        
         
     }
     
@@ -66,11 +90,17 @@ class GameViewController: UIViewController {
         // on demande les repères de la touche par rapport à la view
         let c = d.location(in: view)
         
-        raquette.center.x = c.x
+        if bouton_pause_clique == false {
+            raquette.center.x = c.x
+            
+            //print("Le doigt a glissé en x=\(c.x) et y=\(c.y)")
+        }
         
-        //print("Le doigt a glissé en x=\(c.x) et y=\(c.y)")
         
     }
+    
+
+  
     
     
     var compteur_briques_touchees = 0
@@ -84,8 +114,8 @@ class GameViewController: UIViewController {
             v.x = -v.x
         }
         
-        if balle.center.y < (balle.frame.height/2) {
-            print("La balle a touché le haut de l'écran")
+        if balle.center.y < (bordure_superieure.frame.minY + (balle.frame.size.width/2)) {
+            print("La balle a touché le haut de la bordure")
             v.y = -v.y
         }
         
@@ -147,6 +177,7 @@ class GameViewController: UIViewController {
         v.y = -v.y
         balle.center.x = view.frame.size.width / 2
         balle.center.y = 828
+
         
         // définition du Timer
         t = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(boucle), userInfo: nil, repeats: true)
@@ -172,12 +203,11 @@ class GameViewController: UIViewController {
     }
     
     func fin_du_niveau() {
+        bouton_pause.isHidden = true
         stopTimer()
         retirer_balle()
         retirer_raquette()
         bouton_rejouer.isHidden = false
         print("Fin du niveau")
     }
-    
-    
 }

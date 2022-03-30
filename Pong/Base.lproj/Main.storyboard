@@ -40,6 +40,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="balle" translatesAutoresizingMaskIntoConstraints="NO" id="jLb-8R-2lO">
+                                <rect key="frame" x="192" y="828" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="raquette" translatesAutoresizingMaskIntoConstraints="NO" id="PZe-Of-V0A">
                                 <rect key="frame" x="157" y="857" width="100" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -77,10 +81,23 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="IBu-h5-u2X"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="balle" translatesAutoresizingMaskIntoConstraints="NO" id="jLb-8R-2lO">
-                                <rect key="frame" x="192" y="828" width="30" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92p-Mv-6Nt">
+                                <rect key="frame" x="0.0" y="112" width="414" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l74-Km-Go2">
+                                <rect key="frame" x="349" y="44" width="45" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="⏸"/>
+                                <connections>
+                                    <action selector="mettre_jeu_en_pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cns-Uk-ued"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -88,6 +105,8 @@
                     <navigationItem key="navigationItem" id="PJT-gs-ILc"/>
                     <connections>
                         <outlet property="balle" destination="jLb-8R-2lO" id="dxm-cj-1ls"/>
+                        <outlet property="bordure_superieure" destination="92p-Mv-6Nt" id="zlA-uH-6h3"/>
+                        <outlet property="bouton_pause" destination="l74-Km-Go2" id="IhP-YO-n1f"/>
                         <outlet property="bouton_rejouer" destination="ORD-L8-fPf" id="SFf-dS-s6i"/>
                         <outlet property="raquette" destination="PZe-Of-V0A" id="fMg-7a-4al"/>
                         <outletCollection property="briques" destination="X25-Aw-kYs" collectionClass="NSMutableArray" id="oEo-ED-QVp"/>
