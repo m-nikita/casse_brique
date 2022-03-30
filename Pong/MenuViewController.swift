@@ -1,19 +1,20 @@
 //
-//  ViewController.swift
+//  MenuViewController.swift
 //  Pong
 //
-//  Created by hp omen on 01/03/2022.
+//  Created by hp omen on 30/03/2022.
 //  Copyright © 2022 hp omen. All rights reserved.
 //
 
-
-
 import UIKit
 
-class ViewController: UIViewController {
+class MenuViewController: UIViewController {
 
+    @IBAction func retour_menu(_ sender: UIStoryboardSegue) {
+     // No code needed, no need to connect the IBAction explicitely
+
+    }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

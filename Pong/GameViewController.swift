@@ -46,9 +46,11 @@ class GameViewController: UIViewController {
         self.view.layoutIfNeeded()
     }
 
+    // revenir au menu et arrêter la boucle en fond du timer
     @IBAction func revenir_accueil(_ sender: Any) {
-        
-        
+        stopTimer()
+        retirer_balle()
+        retirer_raquette()
     }
     
     class Brique {

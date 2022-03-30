@@ -14,6 +14,7 @@
 		82442C1D27CE1D20001AB6A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82442C1B27CE1D20001AB6A9 /* Main.storyboard */; };
 		82442C1F27CE1D24001AB6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82442C1E27CE1D24001AB6A9 /* Assets.xcassets */; };
 		82442C2227CE1D24001AB6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82442C2027CE1D24001AB6A9 /* LaunchScreen.storyboard */; };
+		82CD983927F4E6FB006C230A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD983827F4E6FB006C230A /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		82442C1E27CE1D24001AB6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82442C2127CE1D24001AB6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82442C2327CE1D24001AB6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82CD983827F4E6FB006C230A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				82442C2027CE1D24001AB6A9 /* LaunchScreen.storyboard */,
 				82442C2327CE1D24001AB6A9 /* Info.plist */,
 				821D215927F4732400996012 /* GameViewController.swift */,
+				82CD983827F4E6FB006C230A /* MenuViewController.swift */,
 			);
 			path = Pong;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				821D215A27F4732400996012 /* GameViewController.swift in Sources */,
+				82CD983927F4E6FB006C230A /* MenuViewController.swift in Sources */,
 				82442C1A27CE1D20001AB6A9 /* ViewController.swift in Sources */,
 				82442C1627CE1D20001AB6A9 /* AppDelegate.swift in Sources */,
 				82442C1827CE1D20001AB6A9 /* SceneDelegate.swift in Sources */,
