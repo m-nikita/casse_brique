@@ -170,6 +170,11 @@ class GameViewController: UIViewController {
                 
                 if balle.center.y >= (brique.center.y - (brique.frame.size.height/2) - balle.frame.height/2) && balle.center.y <= (brique.center.y + (brique.frame.size.height/2) + balle.frame.height/2){
                     
+                    // test malus
+                    //if brique.tag == 1 {
+                    //    raquette.frame.size.width = 50
+                    //}
+                    
                     print("La brique est touché par la balle")
                     v.y = -v.y
                     brique.isHidden = true
@@ -215,7 +220,7 @@ class GameViewController: UIViewController {
     
     func retirer_balle() {
         balle.isHidden = true
-        balle.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(balle)
+        balle.frame = CGRect(x: 100, y: 100, width: 0, height: 0); view.addSubview(balle)
         print("Balle retirée de l'écran et masquée")
     }
     
