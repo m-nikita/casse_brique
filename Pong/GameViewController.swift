@@ -45,6 +45,11 @@ class GameViewController: UIViewController {
     @IBAction func rejouer(_ sender: Any) {
         self.view.layoutIfNeeded()
     }
+
+    @IBAction func revenir_accueil(_ sender: Any) {
+        
+        
+    }
     
     class Brique {
         
@@ -65,7 +70,7 @@ class GameViewController: UIViewController {
     var v = CGPoint(x: 10.0,y: 10.0) // initialise la vitesse de la balle
     
     // touches = ensemble de UITouch (sorte de tableau, ensemble de touches)
-    
+        
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         
@@ -232,4 +237,14 @@ class GameViewController: UIViewController {
         retirer_raquette()
         bouton_rejouer.isHidden = false
     }
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
 }
+
+
+
