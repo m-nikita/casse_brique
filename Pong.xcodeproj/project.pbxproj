@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		821D215927F4732400996012 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		82442C1227CE1D20001AB6A9 /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82442C1227CE1D20001AB6A9 /* Casse-Brique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Casse-Brique.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82442C1527CE1D20001AB6A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82442C1727CE1D20001AB6A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		82442C1927CE1D20001AB6A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		82442C1327CE1D20001AB6A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82442C1227CE1D20001AB6A9 /* Pong.app */,
+				82442C1227CE1D20001AB6A9 /* Casse-Brique.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 			);
 			name = Pong;
 			productName = Pong;
-			productReference = 82442C1227CE1D20001AB6A9 /* Pong.app */;
+			productReference = 82442C1227CE1D20001AB6A9 /* Casse-Brique.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -303,7 +303,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = nikita.Pong;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Casse-Brique";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -320,7 +320,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = nikita.Pong;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Casse-Brique";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
