@@ -9,6 +9,10 @@
 
 import UIKit
 
+protocol CanRecieve {
+    func passDataBack(data: Int)
+}
+
 class Niveau1ViewController: UIViewController {
 
     @IBOutlet weak var raquette: UIImageView!
@@ -43,14 +47,18 @@ class Niveau1ViewController: UIViewController {
     }
     
     @IBAction func rejouer(_ sender: Any) {
+        if niveau_reussi == 2 {
+            delegate?.passDataBack(data: niveau_reussi)
+        }
         self.view.layoutIfNeeded()
     }
     
-    var callback : ((String) -> Void)?
+    var delegate:CanRecieve?
+
 
     // revenir au menu et arrêter la boucle en fond du timer
     @IBAction func revenir_accueil(_ sender: Any) {
-        callback?("Hi")
+        delegate?.passDataBack(data: niveau_reussi)
         stopTimer()
         retirer_balle()
         retirer_raquette()
@@ -73,7 +81,7 @@ class Niveau1ViewController: UIViewController {
     
     var t:Timer!
     var v = CGPoint(x: 10.0,y: 10.0) // initialise la vitesse de la balle
-    var niveau_reussi = false
+    var niveau_reussi = -1
     
     // touches = ensemble de UITouch (sorte de tableau, ensemble de touches)
         
@@ -188,7 +196,7 @@ class Niveau1ViewController: UIViewController {
                     indicateur_nombre_briques_detruites.text = "\(compteur_briques_touchees)/\(briques.count)"
                     print("\(compteur_briques_touchees)")
                     if compteur_briques_touchees == longeur_tableau_briques {
-                        niveau_reussi = true
+                        niveau_reussi = 2
                         print("Toutes les briques ont été touché")
                         fin_du_niveau()
                         print("Fin du niveau")

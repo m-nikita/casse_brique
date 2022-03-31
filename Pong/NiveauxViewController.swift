@@ -8,7 +8,20 @@
 
 import UIKit
 
-class NiveauxViewController: UIViewController {
+class NiveauxViewController: UIViewController,CanRecieve {
+    
+    func passDataBack(data: Int) {
+        
+        print(data)
+        
+        for bouton_niveau in boutons_niveaux {
+            print(bouton_niveau.tag)
+            if bouton_niveau.tag == data {
+                bouton_niveau.isEnabled = true
+            }
+        }
+    }
+    
     
     
     @IBOutlet var boutons_niveaux: [UIButton]!
@@ -18,31 +31,11 @@ class NiveauxViewController: UIViewController {
 
     }
     
-    var niveau1_reussi = false
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.*
-        
-        print(niveau1_reussi)
-        
-        for bouton_niveau in boutons_niveaux {
-            
-            // NIVEAU 2 - LOCK
-            if bouton_niveau.tag == 2 {
-                bouton_niveau.alpha = 0.5
-                bouton_niveau.isEnabled = false
-                
-                // NIVEAU 2 - UNLOCK
-                if niveau1_reussi == true {
-                    bouton_niveau.alpha = 1
-                    bouton_niveau.isEnabled = true
-                }
-            }
-            
-        }
         
     }
     
@@ -52,14 +45,9 @@ class NiveauxViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let Niveau1ViewController = segue.destination as? Niveau1ViewController {
-            Niveau1ViewController.callback = { message in
-                self.niveau1_reussi = true
-                print(self.niveau1_reussi)
-                for bouton_niveau in self.boutons_niveaux {
-                    self.view.addSubview(bouton_niveau)
-                }
-            }
+        if segue.identifier == "niveau1_to_niveaux" {
+            let secondVC = segue.destination as! Niveau1ViewController
+            secondVC.delegate = self
         }
     }
     
