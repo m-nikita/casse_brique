@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		821D215A27F4732400996012 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821D215927F4732400996012 /* GameViewController.swift */; };
+		821D215A27F4732400996012 /* Niveau1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821D215927F4732400996012 /* Niveau1ViewController.swift */; };
 		82442C1627CE1D20001AB6A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82442C1527CE1D20001AB6A9 /* AppDelegate.swift */; };
 		82442C1827CE1D20001AB6A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82442C1727CE1D20001AB6A9 /* SceneDelegate.swift */; };
 		82442C1A27CE1D20001AB6A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82442C1927CE1D20001AB6A9 /* ViewController.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		821D215927F4732400996012 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		821D215927F4732400996012 /* Niveau1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Niveau1ViewController.swift; sourceTree = "<group>"; };
 		82442C1227CE1D20001AB6A9 /* Casse-Brique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Casse-Brique.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82442C1527CE1D20001AB6A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82442C1727CE1D20001AB6A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 				82442C2327CE1D24001AB6A9 /* Info.plist */,
 				82CD983A27F4FC2F006C230A /* MenuViewController.swift */,
 				82CD983827F4E6FB006C230A /* NiveauxViewController.swift */,
-				821D215927F4732400996012 /* GameViewController.swift */,
+				821D215927F4732400996012 /* Niveau1ViewController.swift */,
 			);
 			path = Pong;
 			sourceTree = "<group>";
@@ -147,7 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				821D215A27F4732400996012 /* GameViewController.swift in Sources */,
+				821D215A27F4732400996012 /* Niveau1ViewController.swift in Sources */,
 				82CD983B27F4FC2F006C230A /* MenuViewController.swift in Sources */,
 				82CD983927F4E6FB006C230A /* NiveauxViewController.swift in Sources */,
 				82442C1A27CE1D20001AB6A9 /* ViewController.swift in Sources */,

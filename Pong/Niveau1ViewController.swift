@@ -9,7 +9,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class Niveau1ViewController: UIViewController {
 
     @IBOutlet weak var raquette: UIImageView!
     
@@ -45,9 +45,12 @@ class GameViewController: UIViewController {
     @IBAction func rejouer(_ sender: Any) {
         self.view.layoutIfNeeded()
     }
+    
+    var callback : ((String) -> Void)?
 
     // revenir au menu et arrêter la boucle en fond du timer
     @IBAction func revenir_accueil(_ sender: Any) {
+        callback?("Hi")
         stopTimer()
         retirer_balle()
         retirer_raquette()
@@ -70,6 +73,7 @@ class GameViewController: UIViewController {
     
     var t:Timer!
     var v = CGPoint(x: 10.0,y: 10.0) // initialise la vitesse de la balle
+    var niveau_reussi = false
     
     // touches = ensemble de UITouch (sorte de tableau, ensemble de touches)
         
@@ -113,6 +117,7 @@ class GameViewController: UIViewController {
     
     var compteur_briques_touchees = 0
     var nombre_vies = 3
+    
     
     // boucle qui se répète
     @objc func boucle (t:Timer) {
@@ -183,6 +188,7 @@ class GameViewController: UIViewController {
                     indicateur_nombre_briques_detruites.text = "\(compteur_briques_touchees)/\(briques.count)"
                     print("\(compteur_briques_touchees)")
                     if compteur_briques_touchees == longeur_tableau_briques {
+                        niveau_reussi = true
                         print("Toutes les briques ont été touché")
                         fin_du_niveau()
                         print("Fin du niveau")
@@ -248,10 +254,11 @@ class GameViewController: UIViewController {
     
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
 }
+
+
+
+
 
 
 
