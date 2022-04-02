@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class NiveauxViewController: UIViewController,CanRecieve, CanRecieve2 {
+class NiveauxViewController: UIViewController,CanRecieve, CanRecieve2, CanRecieve3 {
     
     var bruitage_bouton_navigation : AVAudioPlayer?
     var bruitage_musique_fond : AVAudioPlayer?
@@ -85,6 +85,10 @@ class NiveauxViewController: UIViewController,CanRecieve, CanRecieve2 {
         }
         if segue.identifier == "niveau2_to_niveaux" {
             let secondVC = segue.destination as! Niveau2ViewController
+            secondVC.delegate = self
+        }
+        if segue.identifier == "niveau3_to_niveaux" {
+            let secondVC = segue.destination as! Niveau3ViewController
             secondVC.delegate = self
         }
     }
