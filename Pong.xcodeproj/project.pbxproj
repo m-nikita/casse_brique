@@ -14,6 +14,12 @@
 		82442C1D27CE1D20001AB6A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82442C1B27CE1D20001AB6A9 /* Main.storyboard */; };
 		82442C1F27CE1D24001AB6A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82442C1E27CE1D24001AB6A9 /* Assets.xcassets */; };
 		82442C2227CE1D24001AB6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82442C2027CE1D24001AB6A9 /* LaunchScreen.storyboard */; };
+		8266C31E27F861400082516A /* vie_perdue.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8266C31D27F861400082516A /* vie_perdue.mp3 */; };
+		8266C32027F866D30082516A /* brique_touchee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8266C31F27F866D20082516A /* brique_touchee.wav */; };
+		8266C32227F86BD10082516A /* balle_rebond.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8266C32127F86BD00082516A /* balle_rebond.wav */; };
+		8266C32427F8795D0082516A /* bouton_navigation.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8266C32327F8795D0082516A /* bouton_navigation.wav */; };
+		8266C32927F884F30082516A /* niveau_gagne.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8266C32727F884F30082516A /* niveau_gagne.wav */; };
+		8266C32A27F884F30082516A /* niveau_perdu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8266C32827F884F30082516A /* niveau_perdu.wav */; };
 		82CD983927F4E6FB006C230A /* NiveauxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD983827F4E6FB006C230A /* NiveauxViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +33,12 @@
 		82442C1E27CE1D24001AB6A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82442C2127CE1D24001AB6A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82442C2327CE1D24001AB6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8266C31D27F861400082516A /* vie_perdue.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vie_perdue.mp3; sourceTree = "<group>"; };
+		8266C31F27F866D20082516A /* brique_touchee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = brique_touchee.wav; sourceTree = "<group>"; };
+		8266C32127F86BD00082516A /* balle_rebond.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = balle_rebond.wav; sourceTree = "<group>"; };
+		8266C32327F8795D0082516A /* bouton_navigation.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bouton_navigation.wav; sourceTree = "<group>"; };
+		8266C32727F884F30082516A /* niveau_gagne.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = niveau_gagne.wav; sourceTree = "<group>"; };
+		8266C32827F884F30082516A /* niveau_perdu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = niveau_perdu.wav; sourceTree = "<group>"; };
 		82CD983827F4E6FB006C230A /* NiveauxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiveauxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +72,12 @@
 		82442C1427CE1D20001AB6A9 /* Pong */ = {
 			isa = PBXGroup;
 			children = (
+				8266C32727F884F30082516A /* niveau_gagne.wav */,
+				8266C32827F884F30082516A /* niveau_perdu.wav */,
+				8266C32327F8795D0082516A /* bouton_navigation.wav */,
+				8266C32127F86BD00082516A /* balle_rebond.wav */,
+				8266C31F27F866D20082516A /* brique_touchee.wav */,
+				8266C31D27F861400082516A /* vie_perdue.mp3 */,
 				82442C1527CE1D20001AB6A9 /* AppDelegate.swift */,
 				82442C1727CE1D20001AB6A9 /* SceneDelegate.swift */,
 				82442C1927CE1D20001AB6A9 /* ViewController.swift */,
@@ -131,9 +149,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8266C32427F8795D0082516A /* bouton_navigation.wav in Resources */,
+				8266C31E27F861400082516A /* vie_perdue.mp3 in Resources */,
+				8266C32A27F884F30082516A /* niveau_perdu.wav in Resources */,
 				82442C2227CE1D24001AB6A9 /* LaunchScreen.storyboard in Resources */,
 				82442C1F27CE1D24001AB6A9 /* Assets.xcassets in Resources */,
+				8266C32227F86BD10082516A /* balle_rebond.wav in Resources */,
+				8266C32927F884F30082516A /* niveau_gagne.wav in Resources */,
 				82442C1D27CE1D20001AB6A9 /* Main.storyboard in Resources */,
+				8266C32027F866D30082516A /* brique_touchee.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

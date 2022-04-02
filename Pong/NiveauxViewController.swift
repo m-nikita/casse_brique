@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class NiveauxViewController: UIViewController,CanRecieve {
+    
+    var bruitage_bouton_navigation : AVAudioPlayer?
     
     func passDataBack(data: Int) {
         
@@ -26,6 +30,11 @@ class NiveauxViewController: UIViewController,CanRecieve {
     
     @IBOutlet var boutons_niveaux: [UIButton]!
     
+    
+    @IBAction func boutons_niveaux_cliques(_ sender: Any) {
+        bruitage_bouton_navigation!.play()
+    }
+    
     @IBAction func retour_niveaux(_ sender: UIStoryboardSegue) {
      // No code needed, no need to connect the IBAction explicitely
 
@@ -36,6 +45,15 @@ class NiveauxViewController: UIViewController,CanRecieve {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.*
+        
+        // bruitage_bouton_navigation
+        let chemin4 = Bundle.main.path(forResource: "bouton_navigation", ofType: "wav")
+        let url4 = URL(fileURLWithPath: chemin4!)
+        do {
+            bruitage_bouton_navigation = try AVAudioPlayer(contentsOf: url4)
+        } catch {
+            print("Erreur à l'initialisation du son")
+        }
         
     }
     

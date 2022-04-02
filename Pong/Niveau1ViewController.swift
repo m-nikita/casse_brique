@@ -8,6 +8,8 @@
 
 
 import UIKit
+import AVFoundation
+import AVKit
 
 protocol CanRecieve {
     func passDataBack(data: Int)
@@ -36,10 +38,12 @@ class Niveau1ViewController: UIViewController {
     @IBAction func mettre_jeu_en_pause(_ sender: UIButton) {
         
         if bouton_pause_clique == false {
+            bruitage_bouton_navigation!.play()
             t.invalidate()
             print("Le jeu est en pause")
             bouton_pause_clique = true
         } else {
+            bruitage_bouton_navigation!.play()
             t = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(boucle), userInfo: nil, repeats: true)
             print("Le jeu n'est plus en pause")
             bouton_pause_clique = false
@@ -47,17 +51,26 @@ class Niveau1ViewController: UIViewController {
     }
     
     @IBAction func rejouer(_ sender: Any) {
+        bruitage_bouton_navigation!.play()
         if niveau_reussi == 2 {
             delegate?.passDataBack(data: niveau_reussi)
         }
         self.view.layoutIfNeeded()
     }
     
+    var bruitage_vie_perdue : AVAudioPlayer?
+    var bruitage_brique_touchee : AVAudioPlayer?
+    var bruitage_balle_rebond : AVAudioPlayer?
+    var bruitage_bouton_navigation : AVAudioPlayer?
+    var bruitage_niveau_gagne : AVAudioPlayer?
+    var bruitage_niveau_perdu : AVAudioPlayer?
+    
     var delegate:CanRecieve?
 
 
     // revenir au menu et arrêter la boucle en fond du timer
     @IBAction func revenir_accueil(_ sender: Any) {
+        bruitage_bouton_navigation!.play()
         delegate?.passDataBack(data: niveau_reussi)
         stopTimer()
         retirer_balle()
@@ -131,6 +144,7 @@ class Niveau1ViewController: UIViewController {
     @objc func boucle (t:Timer) {
         
         if nombre_vies == 0 {
+            bruitage_niveau_perdu!.play()
             retirer_toutes_les_briques()
             fin_du_niveau()
             print("Vous n'avez plus de vie")
@@ -144,16 +158,19 @@ class Niveau1ViewController: UIViewController {
         balle.center.y += v.y
         
         if balle.center.x > (view.frame.size.width - (balle.frame.size.width/2)) || balle.center.x < (0 + (balle.frame.size.width/2)) {
+            bruitage_balle_rebond!.play()
             v.x = -v.x
         }
         
         if balle.center.y < (bordure_superieure.frame.minY + (balle.frame.size.width/2)) {
             print("La balle a touché le haut de la bordure")
+            bruitage_balle_rebond!.play()
             v.y = -v.y
         }
         
         if balle.center.y > view.frame.size.height {
             print("PERDU ! La balle a touché le bas de l'écran")
+            bruitage_vie_perdue!.play()
             nombre_vies -= 1
             // remettre la balle au centre de la raquette du joueur
             v.y = -v.y
@@ -171,6 +188,7 @@ class Niveau1ViewController: UIViewController {
                 if balle.center.x >= (raquette.center.x + (balle.frame.size.width/2)) && balle.center.x <= (raquette.center.x + (raquette.frame.size.width/2)) {
                     print("La balle se trouve sur la droite de la raquette")
                 }
+                bruitage_balle_rebond!.play()
                 v.y = -v.y
             }
         }
@@ -189,6 +207,7 @@ class Niveau1ViewController: UIViewController {
                     //}
                     
                     print("La brique est touché par la balle")
+                    bruitage_brique_touchee!.play()
                     v.y = -v.y
                     brique.isHidden = true
                     brique.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(brique)
@@ -196,6 +215,7 @@ class Niveau1ViewController: UIViewController {
                     indicateur_nombre_briques_detruites.text = "\(compteur_briques_touchees)/\(briques.count)"
                     print("\(compteur_briques_touchees)")
                     if compteur_briques_touchees == longeur_tableau_briques {
+                        bruitage_niveau_gagne!.play()
                         niveau_reussi = 2
                         print("Toutes les briques ont été touché")
                         fin_du_niveau()
@@ -211,6 +231,69 @@ class Niveau1ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         // avec le "!", pas besoin de mettre de valeur initiale (il s'agit d'un optionnal a deballage automatique)
+        
+        
+        
+        
+        // BRUITAGE
+        // Bundle = ensemble de fichiers
+        
+        // bruitage_vie_perdue
+        let chemin = Bundle.main.path(forResource: "vie_perdue", ofType: "mp3")
+        let url = URL(fileURLWithPath: chemin!)
+        do {
+            bruitage_vie_perdue = try AVAudioPlayer(contentsOf: url)
+        } catch {
+            print("Erreur à l'initialisation du son")
+        }
+        
+        // bruitage_vie_perdue
+        let chemin2 = Bundle.main.path(forResource: "brique_touchee", ofType: "wav")
+        let url2 = URL(fileURLWithPath: chemin2!)
+        do {
+            bruitage_brique_touchee = try AVAudioPlayer(contentsOf: url2)
+        } catch {
+            print("Erreur à l'initialisation du son")
+        }
+        
+        // bruitage_balle_rebond
+        let chemin3 = Bundle.main.path(forResource: "balle_rebond", ofType: "wav")
+        let url3 = URL(fileURLWithPath: chemin3!)
+        do {
+            bruitage_balle_rebond = try AVAudioPlayer(contentsOf: url3)
+        } catch {
+            print("Erreur à l'initialisation du son")
+        }
+        
+        // bruitage_bouton_navigation
+        let chemin4 = Bundle.main.path(forResource: "bouton_navigation", ofType: "wav")
+        let url4 = URL(fileURLWithPath: chemin4!)
+        do {
+            bruitage_bouton_navigation = try AVAudioPlayer(contentsOf: url4)
+        } catch {
+            print("Erreur à l'initialisation du son")
+        }
+        
+        // bruitage_niveau_gagne
+        let chemin5 = Bundle.main.path(forResource: "niveau_gagne", ofType: "wav")
+        let url5 = URL(fileURLWithPath: chemin5!)
+        do {
+            bruitage_niveau_gagne = try AVAudioPlayer(contentsOf: url5)
+        } catch {
+            print("Erreur à l'initialisation du son")
+        }
+        
+        // bruitage_niveau_perdu
+        let chemin6 = Bundle.main.path(forResource: "niveau_perdu", ofType: "wav")
+        let url6 = URL(fileURLWithPath: chemin6!)
+        do {
+            bruitage_niveau_perdu = try AVAudioPlayer(contentsOf: url6)
+        } catch {
+            print("Erreur à l'initialisation du son")
+        }
+        
+        
+        
         
         
         

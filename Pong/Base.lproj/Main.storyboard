@@ -44,6 +44,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Niveau 1"/>
                                 <connections>
+                                    <action selector="boutons_niveaux_cliques:" destination="G1K-SG-boX" eventType="touchUpInside" id="lnO-kh-2NP"/>
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="niveau1_to_niveaux" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="KZJ-J1-QBm"/>
                                 </connections>
                             </button>
@@ -54,6 +55,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Niveau 2"/>
+                                <connections>
+                                    <action selector="boutons_niveaux_cliques:" destination="G1K-SG-boX" eventType="touchUpInside" id="xC3-3m-pQG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
