@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qm-CZ-mXL">
-                                <rect key="frame" x="153" y="509" width="108" height="48"/>
+                                <rect key="frame" x="153" y="469" width="108" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4t-Eo-z2l">
-                                <rect key="frame" x="153" y="567" width="108" height="48"/>
+                                <rect key="frame" x="153" y="527" width="108" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -57,6 +57,18 @@
                                 <state key="normal" title="Niveau 2"/>
                                 <connections>
                                     <action selector="boutons_niveaux_cliques:" destination="G1K-SG-boX" eventType="touchUpInside" id="xC3-3m-pQG"/>
+                                    <segue destination="2M3-pM-0dx" kind="presentation" identifier="niveau2_to_niveaux" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="miz-PJ-5QG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucj-sx-8M5">
+                                <rect key="frame" x="153" y="583" width="108" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Niveau 3"/>
+                                <connections>
+                                    <action selector="boutons_niveaux_cliques:" destination="G1K-SG-boX" eventType="touchUpInside" id="XuE-0M-Vfa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,8 +78,8 @@
                     <navigationItem key="navigationItem" id="2Vg-7k-7tA"/>
                     <connections>
                         <outletCollection property="boutons_niveaux" destination="8qm-CZ-mXL" collectionClass="NSMutableArray" id="9gW-TX-X4X"/>
-                        <outletCollection property="boutons_niveaux" destination="8qm-CZ-mXL" collectionClass="NSMutableArray" id="5u8-MV-88z"/>
                         <outletCollection property="boutons_niveaux" destination="j4t-Eo-z2l" collectionClass="NSMutableArray" id="crw-v2-5Po"/>
+                        <outletCollection property="boutons_niveaux" destination="ucj-sx-8M5" collectionClass="NSMutableArray" id="6pK-Y0-ipl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gd-FV-LAq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -292,6 +304,255 @@
                 <exit id="PM0-zO-n38" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Niveau2 View Controller-->
+        <scene sceneID="6bx-vE-eQT">
+            <objects>
+                <viewController id="2M3-pM-0dx" customClass="Niveau2ViewController" customModule="Casse_Brique" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GjN-oa-5OI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="balle" translatesAutoresizingMaskIntoConstraints="NO" id="gXY-sK-ZHm">
+                                <rect key="frame" x="192" y="828" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="raquette" translatesAutoresizingMaskIntoConstraints="NO" id="kyQ-kK-3Na">
+                                <rect key="frame" x="157" y="857" width="100" height="5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="d3c-7w-xjS">
+                                <rect key="frame" x="20" y="140" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="uJm-LL-p4H">
+                                <rect key="frame" x="101" y="140" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="Dge-jt-7Ff">
+                                <rect key="frame" x="177" y="140" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="Cdw-Oz-zng">
+                                <rect key="frame" x="256" y="140" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="4Xk-pj-Li5">
+                                <rect key="frame" x="334" y="140" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="5Q7-9v-hDq">
+                                <rect key="frame" x="0.0" y="-215" width="414" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="LgS-DE-3WG">
+                                <rect key="frame" x="0.0" y="-185" width="414" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="FAQ-Bx-tgZ">
+                                <rect key="frame" x="101" y="200" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="NvD-8Z-n7y">
+                                <rect key="frame" x="177" y="200" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="x8x-6O-ZnM">
+                                <rect key="frame" x="256" y="200" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="WEc-AI-Dh0">
+                                <rect key="frame" x="0.0" y="-155" width="414" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="jx8-Zn-Pcw">
+                                <rect key="frame" x="0.0" y="-125" width="414" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="MwL-cS-Me6">
+                                <rect key="frame" x="177" y="260" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="SjK-Hp-yqW">
+                                <rect key="frame" x="20" y="315" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="l5h-6R-nd1">
+                                <rect key="frame" x="101" y="315" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="WDC-ui-iVO">
+                                <rect key="frame" x="177" y="315" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-wQ-wi2">
+                                <rect key="frame" x="256" y="315" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="yIT-Qi-9Yv">
+                                <rect key="frame" x="334" y="315" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="fTs-fl-uZ0">
+                                <rect key="frame" x="101" y="375" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="IyP-DU-Efp">
+                                <rect key="frame" x="177" y="375" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="Vkz-7O-9yN">
+                                <rect key="frame" x="256" y="375" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="7hN-cE-XIx">
+                                <rect key="frame" x="177" y="435" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="Nc0-0g-aRA">
+                                <rect key="frame" x="0.0" y="-95" width="414" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="Nm7-Bo-F6H">
+                                <rect key="frame" x="0.0" y="-65" width="414" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsg-Fn-aYp">
+                                <rect key="frame" x="0.0" y="112" width="414" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkd-Vz-dof">
+                                <rect key="frame" x="349" y="44" width="45" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="⏯️"/>
+                                <connections>
+                                    <action selector="mettre_jeu_en_pause:" destination="2M3-pM-0dx" eventType="touchUpInside" id="1kh-ut-W4A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1A-9s-a6h">
+                                <rect key="frame" x="20" y="44" width="45" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="niveau1_to_niveaux"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="🔙"/>
+                                <connections>
+                                    <action selector="revenir_accueil:" destination="2M3-pM-0dx" eventType="touchUpInside" id="4dS-DW-6Pc"/>
+                                    <segue destination="Sd9-WF-lbg" kind="unwind" unwindAction="retour_niveaux:" id="VNa-Xo-eea"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8N-JL-1Sn">
+                                <rect key="frame" x="114" y="44" width="45" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="❤️"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="se8-2T-Ggr">
+                                <rect key="frame" x="226" y="44" width="45" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="🧱"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENP-Dz-6MC">
+                                <rect key="frame" x="160" y="64" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-l7-zbt">
+                                <rect key="frame" x="273" y="64" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWL-bW-OMu">
+                                <rect key="frame" x="153" y="424" width="108" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="REJOUER"/>
+                                <connections>
+                                    <action selector="rejouer:" destination="2M3-pM-0dx" eventType="touchUpInside" id="epO-ur-MPV"/>
+                                    <segue destination="2M3-pM-0dx" kind="presentation" identifier="" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="fi5-uL-n1Z"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="jKY-Eo-UDk">
+                                <rect key="frame" x="0.0" y="-35" width="414" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="vZd-kb-31I">
+                                <rect key="frame" x="20" y="495" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="2JN-C7-4ua">
+                                <rect key="frame" x="101" y="495" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="dJV-ru-nxG">
+                                <rect key="frame" x="177" y="495" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="DB7-bV-h1f">
+                                <rect key="frame" x="256" y="495" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="lvx-bm-D3M">
+                                <rect key="frame" x="334" y="495" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="b1A-9s-a6h" firstAttribute="leading" secondItem="cPR-d1-NzI" secondAttribute="leading" constant="20" id="11v-FN-prB"/>
+                            <constraint firstItem="Fkd-Vz-dof" firstAttribute="top" secondItem="cPR-d1-NzI" secondAttribute="top" id="Cz1-mN-IHy"/>
+                            <constraint firstItem="cPR-d1-NzI" firstAttribute="trailing" secondItem="Fkd-Vz-dof" secondAttribute="trailing" constant="20" id="Eem-8n-iqK"/>
+                            <constraint firstItem="b1A-9s-a6h" firstAttribute="top" secondItem="cPR-d1-NzI" secondAttribute="top" id="YES-KM-9ww"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cPR-d1-NzI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9yj-C1-LyZ"/>
+                    <connections>
+                        <outlet property="balle" destination="gXY-sK-ZHm" id="ulR-Vb-4Ro"/>
+                        <outlet property="bordure_superieure" destination="Fsg-Fn-aYp" id="tfX-CD-kOb"/>
+                        <outlet property="bouton_pause" destination="Fkd-Vz-dof" id="k21-6P-Js8"/>
+                        <outlet property="bouton_rejouer" destination="yWL-bW-OMu" id="fPP-r0-1nO"/>
+                        <outlet property="indicateur_nombre_briques_detruites" destination="XiW-l7-zbt" id="TAt-Id-Q7y"/>
+                        <outlet property="indicateur_nombre_vies_restantes" destination="ENP-Dz-6MC" id="SlM-Uu-2bk"/>
+                        <outlet property="raquette" destination="kyQ-kK-3Na" id="DqJ-mY-dhF"/>
+                        <outletCollection property="briques" destination="4Xk-pj-Li5" collectionClass="NSMutableArray" id="TER-ef-aEn"/>
+                        <outletCollection property="briques" destination="Cdw-Oz-zng" collectionClass="NSMutableArray" id="T0s-vE-x3j"/>
+                        <outletCollection property="briques" destination="Dge-jt-7Ff" collectionClass="NSMutableArray" id="VzM-5U-Vmy"/>
+                        <outletCollection property="briques" destination="uJm-LL-p4H" collectionClass="NSMutableArray" id="UxU-F7-xXO"/>
+                        <outletCollection property="briques" destination="d3c-7w-xjS" collectionClass="NSMutableArray" id="ZUb-rB-don"/>
+                        <outletCollection property="briques" destination="FAQ-Bx-tgZ" collectionClass="NSMutableArray" id="taO-zB-ovQ"/>
+                        <outletCollection property="briques" destination="NvD-8Z-n7y" collectionClass="NSMutableArray" id="MfC-ov-R3T"/>
+                        <outletCollection property="briques" destination="x8x-6O-ZnM" collectionClass="NSMutableArray" id="xF4-C3-lqd"/>
+                        <outletCollection property="briques" destination="MwL-cS-Me6" collectionClass="NSMutableArray" id="PRk-vQ-Mer"/>
+                        <outletCollection property="briques" destination="SjK-Hp-yqW" collectionClass="NSMutableArray" id="xc4-cR-5il"/>
+                        <outletCollection property="briques" destination="l5h-6R-nd1" collectionClass="NSMutableArray" id="irE-9U-5EW"/>
+                        <outletCollection property="briques" destination="WDC-ui-iVO" collectionClass="NSMutableArray" id="Z6e-i5-aml"/>
+                        <outletCollection property="briques" destination="nFw-wQ-wi2" collectionClass="NSMutableArray" id="sdm-Em-eaY"/>
+                        <outletCollection property="briques" destination="yIT-Qi-9Yv" collectionClass="NSMutableArray" id="LIa-np-zm6"/>
+                        <outletCollection property="briques" destination="fTs-fl-uZ0" collectionClass="NSMutableArray" id="T5q-OZ-IXs"/>
+                        <outletCollection property="briques" destination="IyP-DU-Efp" collectionClass="NSMutableArray" id="5kW-kQ-jpi"/>
+                        <outletCollection property="briques" destination="Vkz-7O-9yN" collectionClass="NSMutableArray" id="PHu-0H-ze5"/>
+                        <outletCollection property="briques" destination="lvx-bm-D3M" collectionClass="NSMutableArray" id="Xkx-E8-iuV"/>
+                        <outletCollection property="briques" destination="DB7-bV-h1f" collectionClass="NSMutableArray" id="Wnl-LZ-t9V"/>
+                        <outletCollection property="briques" destination="dJV-ru-nxG" collectionClass="NSMutableArray" id="AuJ-jC-pI5"/>
+                        <outletCollection property="briques" destination="2JN-C7-4ua" collectionClass="NSMutableArray" id="4fz-7w-0aE"/>
+                        <outletCollection property="briques" destination="vZd-kb-31I" collectionClass="NSMutableArray" id="piz-Wk-rRA"/>
+                        <outletCollection property="briques" destination="7hN-cE-XIx" collectionClass="NSMutableArray" id="kX1-4j-VFG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DIe-Ig-sxx" sceneMemberID="firstResponder"/>
+                <exit id="Sd9-WF-lbg" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="865" y="139"/>
         </scene>
     </scenes>
     <resources>

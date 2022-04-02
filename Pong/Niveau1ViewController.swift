@@ -158,12 +158,16 @@ class Niveau1ViewController: UIViewController {
         balle.center.y += v.y
         
         if balle.center.x > (view.frame.size.width - (balle.frame.size.width/2)) || balle.center.x < (0 + (balle.frame.size.width/2)) {
+            bruitage_balle_rebond!.stop()
+            bruitage_balle_rebond!.currentTime = 0
             bruitage_balle_rebond!.play()
             v.x = -v.x
         }
         
         if balle.center.y < (bordure_superieure.frame.minY + (balle.frame.size.width/2)) {
             print("La balle a touché le haut de la bordure")
+            bruitage_balle_rebond!.stop()
+            bruitage_balle_rebond!.currentTime = 0
             bruitage_balle_rebond!.play()
             v.y = -v.y
         }
@@ -188,6 +192,8 @@ class Niveau1ViewController: UIViewController {
                 if balle.center.x >= (raquette.center.x + (balle.frame.size.width/2)) && balle.center.x <= (raquette.center.x + (raquette.frame.size.width/2)) {
                     print("La balle se trouve sur la droite de la raquette")
                 }
+                bruitage_balle_rebond!.stop()
+                bruitage_balle_rebond!.currentTime = 0
                 bruitage_balle_rebond!.play()
                 v.y = -v.y
             }
@@ -207,6 +213,8 @@ class Niveau1ViewController: UIViewController {
                     //}
                     
                     print("La brique est touché par la balle")
+                    bruitage_brique_touchee!.stop()
+                    bruitage_brique_touchee!.currentTime = 0
                     bruitage_brique_touchee!.play()
                     v.y = -v.y
                     brique.isHidden = true
