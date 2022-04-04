@@ -7,10 +7,12 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "brique_2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "brique_3.png",
       "scale" : "3x"
     }
   ],

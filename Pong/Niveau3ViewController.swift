@@ -179,7 +179,7 @@ class Niveau3ViewController: UIViewController {
             // remettre la balle au centre de la raquette du joueur
             v.y = -v.y
             balle.center.x = raquette.center.x
-            balle.center.y = 828
+            balle.center.y = 827
         }
         
         if balle.center.y >= (raquette.center.y - (raquette.frame.size.height)) && balle.center.y <= (raquette.center.y + (raquette.frame.size.height)) {

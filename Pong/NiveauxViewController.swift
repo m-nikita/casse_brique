@@ -22,6 +22,7 @@ class NiveauxViewController: UIViewController,CanRecieve, CanRecieve2, CanReciev
         for bouton_niveau in boutons_niveaux {
             print(bouton_niveau.tag)
             if bouton_niveau.tag <= data {
+                bouton_niveau.setTitle("Niveau \(bouton_niveau.tag)", for: .normal)
                 bouton_niveau.isEnabled = true
             }
         }

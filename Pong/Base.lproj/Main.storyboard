@@ -54,7 +54,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Niveau 2"/>
+                                <state key="normal" title="🔒 Niveau 2"/>
                                 <connections>
                                     <action selector="boutons_niveaux_cliques:" destination="G1K-SG-boX" eventType="touchUpInside" id="xC3-3m-pQG"/>
                                     <segue destination="2M3-pM-0dx" kind="presentation" identifier="niveau2_to_niveaux" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="miz-PJ-5QG"/>
@@ -66,7 +66,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Niveau 3"/>
+                                <state key="normal" title="🔒 Niveau 3"/>
                                 <connections>
                                     <action selector="boutons_niveaux_cliques:" destination="G1K-SG-boX" eventType="touchUpInside" id="XuE-0M-Vfa"/>
                                     <segue destination="hAW-nI-gVg" kind="presentation" identifier="niveau3_to_niveaux" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="eaJ-B2-3tT"/>
@@ -193,7 +193,7 @@
                                 <rect key="frame" x="114" y="44" width="45" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="❤️"/>
+                                <state key="normal" title="💙"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6K6-Mc-tTP">
                                 <rect key="frame" x="226" y="44" width="45" height="60"/>
@@ -264,7 +264,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XUb-j0-S0R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Sr-Ez-jmJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="l74-Km-Go2" secondAttribute="trailing" constant="20" id="TfO-qT-5tt"/>
@@ -315,11 +315,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="balle" translatesAutoresizingMaskIntoConstraints="NO" id="gXY-sK-ZHm">
-                                <rect key="frame" x="192" y="828" width="30" height="30"/>
+                                <rect key="frame" x="192" y="827" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="raquette" translatesAutoresizingMaskIntoConstraints="NO" id="kyQ-kK-3Na">
-                                <rect key="frame" x="157" y="857" width="100" height="5"/>
+                                <rect key="frame" x="157" y="857" width="100" height="6"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="brique" translatesAutoresizingMaskIntoConstraints="NO" id="d3c-7w-xjS">
@@ -448,7 +448,7 @@
                                 <rect key="frame" x="114" y="44" width="45" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="❤️"/>
+                                <state key="normal" title="💙"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="se8-2T-Ggr">
                                 <rect key="frame" x="226" y="44" width="45" height="60"/>
@@ -649,7 +649,7 @@
                                 <rect key="frame" x="114" y="44" width="45" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="❤️"/>
+                                <state key="normal" title="💙"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRs-oX-3AX">
                                 <rect key="frame" x="226" y="44" width="45" height="60"/>
@@ -728,6 +728,6 @@
     <resources>
         <image name="balle" width="30" height="30"/>
         <image name="brique" width="60" height="30"/>
-        <image name="raquette" width="100" height="5"/>
+        <image name="raquette" width="120" height="6"/>
     </resources>
 </document>
