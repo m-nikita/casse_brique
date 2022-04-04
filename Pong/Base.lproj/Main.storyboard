@@ -70,6 +70,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="ℹ️"/>
                                 <connections>
+                                    <action selector="bruitage_bouton_informations:" destination="G1K-SG-boX" eventType="touchUpInside" id="NJI-To-XG1"/>
                                     <segue destination="Iup-Qp-uC6" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="nWj-sl-HTf"/>
                                 </connections>
                             </button>
@@ -780,6 +781,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="🔙"/>
                                 <connections>
+                                    <action selector="bruitage_bouton_retour:" destination="Iup-Qp-uC6" eventType="touchUpInside" id="5Yl-Cq-2FU"/>
                                     <segue destination="ItJ-8K-HIa" kind="unwind" unwindAction="retour_niveaux:" id="Xlx-Tv-p9c"/>
                                 </connections>
                             </button>

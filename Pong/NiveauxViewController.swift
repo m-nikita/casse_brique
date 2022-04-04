@@ -45,13 +45,16 @@ class NiveauxViewController: UIViewController,CanRecieve, CanRecieve2, CanReciev
 
     }
     
-
+    @IBAction func bruitage_bouton_informations(_ sender: Any) {
+        bruitage_bouton_navigation!.play()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.*
         
-        //Ò bruitage_bouton_navigation
+        // bruitage_bouton_navigation
         let chemin4 = Bundle.main.path(forResource: "bouton_navigation", ofType: "wav")
         let url4 = URL(fileURLWithPath: chemin4!)
         do {

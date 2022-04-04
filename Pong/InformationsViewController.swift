@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class InformationsViewController: UIViewController {
+    
+    var bruitage_bouton_navigation : AVAudioPlayer?
 
+    @IBAction func bruitage_bouton_retour(_ sender: Any) {
+        bruitage_bouton_navigation!.play()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // bruitage_bouton_navigation
+        let chemin4 = Bundle.main.path(forResource: "bouton_navigation", ofType: "wav")
+        let url4 = URL(fileURLWithPath: chemin4!)
+        do {
+            bruitage_bouton_navigation = try AVAudioPlayer(contentsOf: url4)
+        } catch {
+            print("Erreur à l'initialisation du son")
+        }
     }
     
 
