@@ -309,7 +309,7 @@
         <!--Niveau2 View Controller-->
         <scene sceneID="6bx-vE-eQT">
             <objects>
-                <viewController id="2M3-pM-0dx" customClass="Niveau2ViewController" customModule="Casse_Brique" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2M3-pM-0dx" customClass="Niveau2ViewController" customModule="Pong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GjN-oa-5OI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -558,7 +558,7 @@
         <!--Niveau3 View Controller-->
         <scene sceneID="Xgm-61-gAq">
             <objects>
-                <viewController id="hAW-nI-gVg" customClass="Niveau3ViewController" customModule="Casse_Brique" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hAW-nI-gVg" customClass="Niveau3ViewController" customModule="Pong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uYR-YP-BWx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
