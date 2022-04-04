@@ -23,6 +23,7 @@
 		8266C32C27F88C990082516A /* Niveau2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8266C32B27F88C990082516A /* Niveau2ViewController.swift */; };
 		8266C32E27F895260082516A /* musique_fond.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8266C32D27F895260082516A /* musique_fond.wav */; };
 		8266C33027F8B9EB0082516A /* Niveau3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8266C32F27F8B9EB0082516A /* Niveau3ViewController.swift */; };
+		82CC7BE427FB8628008B0FA2 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CC7BE327FB8628008B0FA2 /* InformationsViewController.swift */; };
 		82CD983927F4E6FB006C230A /* NiveauxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CD983827F4E6FB006C230A /* NiveauxViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		8266C32B27F88C990082516A /* Niveau2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Niveau2ViewController.swift; sourceTree = "<group>"; };
 		8266C32D27F895260082516A /* musique_fond.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = musique_fond.wav; sourceTree = "<group>"; };
 		8266C32F27F8B9EB0082516A /* Niveau3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Niveau3ViewController.swift; sourceTree = "<group>"; };
+		82CC7BE327FB8628008B0FA2 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
 		82CD983827F4E6FB006C230A /* NiveauxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiveauxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 				821D215927F4732400996012 /* Niveau1ViewController.swift */,
 				8266C32B27F88C990082516A /* Niveau2ViewController.swift */,
 				8266C32F27F8B9EB0082516A /* Niveau3ViewController.swift */,
+				82CC7BE327FB8628008B0FA2 /* InformationsViewController.swift */,
 			);
 			path = Pong;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				82442C1A27CE1D20001AB6A9 /* ViewController.swift in Sources */,
 				82442C1627CE1D20001AB6A9 /* AppDelegate.swift in Sources */,
 				82442C1827CE1D20001AB6A9 /* SceneDelegate.swift in Sources */,
+				82CC7BE427FB8628008B0FA2 /* InformationsViewController.swift in Sources */,
 				8266C32C27F88C990082516A /* Niveau2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
