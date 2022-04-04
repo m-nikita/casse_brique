@@ -203,32 +203,75 @@ class Niveau3ViewController: UIViewController {
         
         for brique in briques {
             let longeur_tableau_briques = briques.count
-            if balle.center.x >= (brique.center.x - (brique.frame.size.width/2) - balle.frame.width/2) && balle.center.x <= (brique.center.x + (brique.frame.size.width/2) + balle.frame.width/2) {
+            
+            
+            let balle_haut = balle.center.y - (balle.frame.size.height/2)
+            let balle_bas = balle.center.y + (balle.frame.size.height/2)
+            let balle_gauche = balle.center.x - (balle.frame.size.width/2)
+            let balle_droite = balle.center.x + (balle.frame.size.width/2)
+            
+            let brique_haut = brique.center.y - (brique.frame.size.height/2)
+            let brique_bas = brique.center.y + (brique.frame.size.height/2)
+            let brique_gauche = brique.center.x - (brique.frame.size.width/2)
+            let brique_droite = brique.center.x + (brique.frame.size.width/2)
+            
+            func evenement_apres_brique_touchee() {
+                print("La brique est touché par la balle")
+                bruitage_brique_touchee!.stop()
+                bruitage_brique_touchee!.currentTime = 0
+                bruitage_brique_touchee!.play()
                 
-                if balle.center.y >= (brique.center.y - (brique.frame.size.height/2) - balle.frame.height/2) && balle.center.y <= (brique.center.y + (brique.frame.size.height/2) + balle.frame.height/2){
+                
+                brique.isHidden = true
+                brique.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(brique)
+                compteur_briques_touchees += 1
+                indicateur_nombre_briques_detruites.text = "\(compteur_briques_touchees)/\(briques.count)"
+                print("\(compteur_briques_touchees)")
+                if compteur_briques_touchees == longeur_tableau_briques {
+                    bruitage_niveau_gagne!.play()
+                    niveau_reussi = 4
+                    print("Toutes les briques ont été touché")
+                    fin_du_niveau()
+                    print("Fin du niveau")
+                }
+            }
+            
+            
+            if balle_haut <= brique_bas && balle_bas >= brique_haut{
+                if balle_gauche <= brique_droite && balle_droite >= brique_gauche{
+                    //print("Zone de la brique")
                     
-                    // test malus
-                    //if brique.tag == 1 {
-                    //    raquette.frame.size.width = 50
-                    //}
                     
-                    print("La brique est touché par la balle")
-                    bruitage_brique_touchee!.stop()
-                    bruitage_brique_touchee!.currentTime = 0
-                    bruitage_brique_touchee!.play()
-                    v.y = -v.y
-                    brique.isHidden = true
-                    brique.frame = CGRect(x: 0, y: 0, width: 0, height: 0); view.addSubview(brique)
-                    compteur_briques_touchees += 1
-                    indicateur_nombre_briques_detruites.text = "\(compteur_briques_touchees)/\(briques.count)"
-                    print("\(compteur_briques_touchees)")
-                    if compteur_briques_touchees == longeur_tableau_briques {
-                        bruitage_niveau_gagne!.play()
-                        niveau_reussi = 4
-                        print("Toutes les briques ont été touché")
-                        fin_du_niveau()
-                        print("Fin du niveau")
+                    // BAS
+                    if balle_haut < brique_bas && balle.center.y > brique_bas {
+
+                        print("Brique touchée par le BAS")
+                        v.y = -v.y
+                        
+                    // HAUT
                     }
+                    else if balle_bas > brique_haut && balle.center.y < brique_haut {
+
+                        print("Brique touchée par le HAUT")
+                        v.y = -v.y
+                    }
+                        
+                        
+                        
+                    // DROITE
+                    else if balle_gauche < brique_droite && balle.center.x > brique_droite {
+                        
+                        print("Brique touchée par la DROITE")
+                        v.x = -v.x
+                        
+                    // GAUCHE
+                    }
+                    else if balle_droite > brique_gauche && balle.center.x < brique_gauche {
+                        
+                        print("Brique touchée par la GAUCHE")
+                        v.x = -v.x
+                    }
+                    evenement_apres_brique_touchee()
                 }
             }
         }
